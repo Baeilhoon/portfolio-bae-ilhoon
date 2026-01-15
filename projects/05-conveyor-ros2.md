@@ -364,7 +364,7 @@ public:
 
 ## 🔗 프로젝트 링크
 
-- **GitHub**: [Link to repository]
+- **GitHub**: [https://github.com/taesla/doosan_rokey_collabo1]
 - **MoveIt2 Documentation**: [https://moveit.ros.org/]
 - **ROS2 Documentation**: [http://docs.ros.org/en/humble/]
 

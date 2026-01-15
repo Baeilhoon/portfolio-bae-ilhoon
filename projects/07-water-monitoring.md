@@ -368,7 +368,6 @@ void handleAlarm(AlarmType alarm) {
 
 ## 🔗 관련 자료
 
-- **GitHub**: [Link to repository]
 - **Arduino**: [https://www.arduino.cc/]
 - **DallasTemperature Library**: [https://github.com/milesburton/Arduino-Temperature-Control-Library]
 

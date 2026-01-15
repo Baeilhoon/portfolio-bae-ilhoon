@@ -454,7 +454,7 @@ class HandDetector:
 
 ## 🔗 관련 자료
 
-- **GitHub**: [Link to repository]
+- **GitHub**: [https://github.com/C-2-Organization/DUM-E]
 - **YOLOWorld**: [https://github.com/AILab-CVC/YOLO-World]
 - **Mediapipe**: [https://mediapipe.readthedocs.io/]
 

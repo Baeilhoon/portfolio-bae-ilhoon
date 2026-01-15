@@ -315,7 +315,6 @@ class MCUController:
 
 ## 🔗 프로젝트 링크
 
-- **GitHub**: [Link to repository]
 - **TensorFlow Lite Docs**: [https://www.tensorflow.org/lite]
 - **Raspberry Pi Documentation**: [https://www.raspberrypi.com/documentation/]
 - **OpenCV Python**: [https://docs.opencv.org/master/d6/d00/tutorial_py_root.html]

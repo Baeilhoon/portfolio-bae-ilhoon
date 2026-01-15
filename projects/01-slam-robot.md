@@ -291,14 +291,6 @@ subscription_ = this->create_subscription<sensor_msgs::msg::Image>(
 
 ---
 
-## 🔗 프로젝트 링크
-
-- **GitHub**: [Link to repository] (파일 구조, 코드 예제)
-- **ROS2 Documentation**: [http://docs.ros.org/en/humble/]
-- **OpenCV Docs**: [https://docs.opencv.org/]
-
----
-
 ## 📝 코드 예제
 
 ### ROS2 노드 기본 구조

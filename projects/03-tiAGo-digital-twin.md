@@ -432,7 +432,7 @@ class QRCodeDetector:
 
 ## 🔗 관련 자료
 
-- **GitHub**: [Link to repository]
+- **GitHub**: [https://github.com/C-2-Organization/tiago-delivery/tree/main/ros2_ws/src]
 - **Isaac-Sim**: [https://docs.omniverse.nvidia.com/isaacsim/]
 - **YOLOv8**: [https://github.com/ultralytics/ultralytics]
 - **Tesseract OCR**: [https://github.com/UB-Mannheim/tesseract]
