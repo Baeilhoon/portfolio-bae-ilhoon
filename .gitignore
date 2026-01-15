@@ -1,0 +1,72 @@
+# Gitignore for Portfolio Project
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Build Output
+build/
+dist/
+*.o
+*.a
+*.so
+*.dylib
+*.exe
+*.out
+*.app
+
+# ROS2
+devel/
+install/
+log/
+*.cache
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Environment files
+.env
+.env.local
+.venv
+env/
+venv/
+
+# Temporary files
+*.tmp
+*.bak
+*.temp
+.tmp/
+
+# OS specific
+*.lock
+node_modules/
+
+# Documentation builds
+docs/_build/
+site/
+
+# Compiled C/C++
+cmake-build-*/
+
+# Project specific (if any)
+# Add your project-specific ignores here
