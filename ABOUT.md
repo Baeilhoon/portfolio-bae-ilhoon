@@ -121,6 +121,3 @@
 
 ---
 
-**Last Updated**: 2026년 1월 15일  
-**License**: MIT License
-

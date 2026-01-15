@@ -158,5 +158,3 @@ ROS2 기반 로봇 제어 시스템 개발 집중 교육
 - **[교육 경력](./education/rokey-bootcamp.md)** - ROKEY 부트캠프 상세 정보
 
 ---
-
-**Last Updated**: 2026년 1월 15일

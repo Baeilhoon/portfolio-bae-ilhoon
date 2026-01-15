@@ -4,7 +4,7 @@
 
 **작업 기간**: 2025.11  
 **프로젝트 분류**: ROS2 프로젝트 (ROKEY 부트캠프)  
-**참여 인원**: 5명  
+**참여 인원**: 9명  
 **기여도**: 그리퍼 <-> turtlebot <-> PC 파이프라인 구현 (20%)
 
 ### 프로젝트 설명
@@ -13,7 +13,7 @@ Ubuntu Linux 환경에서 ROS2 기반 자율주행 로봇 시스템을 개발했
 
 ---
 
-## 🎯 담당 역할 (씨프로 직무 연관)
+## 🎯 담당 역할
 
 ### ✅ 그리퍼 설계 및 시스템 연동 (Arduino → TurtleBot → PC)
 
@@ -224,47 +224,6 @@ subscription_ = this->create_subscription<sensor_msgs::msg::Image>(
 
 ---
 
-## 📝 코드 예제
-
-### ROS2 노드 기본 구조
-```cpp
-#include "rclcpp/rclcpp.hpp"
-#include "sensor_msgs/msg/image.hpp"
-#include "cv_bridge/cv_bridge.h"
-#include "opencv2/opencv.hpp"
-
-class CameraNode : public rclcpp::Node {
-public:
-    CameraNode() : Node("camera_node") {
-        // QoS 설정
-        auto qos = rclcpp::QoS(rclcpp::KeepLast(10))
-            .reliability(rclcpp::ReliabilityPolicy::BestEffort);
-        
-        // Subscriber 생성
-        subscription_ = this->create_subscription<sensor_msgs::msg::Image>(
-            "camera/color/image_raw", qos,
-            std::bind(&CameraNode::imageCallback, this, std::placeholders::_1));
-    }
-
-private:
-    void imageCallback(const sensor_msgs::msg::Image::SharedPtr msg) {
-        // cv_bridge로 ROS2 메시지를 OpenCV Mat으로 변환
-        cv::Mat frame = cv_bridge::toCvShare(msg, "bgr8")->image;
-        
-        // 이미지 처리
-        cv::Mat processed = processImage(frame);
-        
-        // 결과 시각화
-        cv::imshow("Processed", processed);
-        cv::waitKey(1);
-    }
-    
-    rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr subscription_;
-};
-```
-
----
-
 ## ✅ 최종 평가
 
 ### 강점
@@ -272,11 +231,6 @@ private:
 ✅ Linux 기반 ROS2 개발  
 ✅ 성능 최적화 및 프로파일링  
 ✅ 멀티스레드 및 동기화 이해  
-
-### 향후 개선 방향
-- CUDA 기반 GPU 가속화
-- 딥러닝 모델 통합 (YOLO, Pose Detection)
-- 분산 ROS2 시스템 (다중 로봇)
 
 ---
 
