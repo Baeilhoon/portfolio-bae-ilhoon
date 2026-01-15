@@ -80,20 +80,13 @@
 
 ## 📈 핵심 역량
 
-### ⭐⭐⭐⭐⭐ 매우 능숙
-- Embedded Linux 개발
-- C++ & ROS2 노드 개발
-- Linux 커맨드라인
-
-### ⭐⭐⭐⭐ 능숙
-- Python 프로그래밍
-- MCU 펌웨어
-- Git 협업
-
-### ⭐⭐⭐ 기초
-- MoveIt2 로봇 제어
-- TensorFlow Lite AI
-- 네트워크 프로토콜 (MQTT, DDS)
+| 분야 | 수준 | 설명 |
+|------|------|------|
+| **Embedded Linux** | ●●●●○ | Ubuntu 22.04, ROS2 Humble, Linux Command Line |
+| **프로그래밍 언어** | ●●●●○ | C, C++ (ROS2 노드 개발), Python |
+| **영상/이미지 처리** | ●●●○○ | OpenCV (cv_bridge), 이미지 전처리, YOLO 연동 |
+| **통신** | ●●●●○ | ROS2 DDS, MQTT, UART, TCP/UDP 기초 |
+| **임베디드/MCU** | ●●●●○ | Arduino(ATmega), ESP32, 센서 인터페이싱 |
 
 ## 🚀 향후 계획
 
