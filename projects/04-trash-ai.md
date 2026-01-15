@@ -68,65 +68,6 @@ class CameraController:
 
 ---
 
-### ✅ YOLO 모델 추론 파이프라인 통합
-
-**담당 내용**
-- TensorFlow Lite 모델 로딩 및 추론
-- 전처리된 이미지를 모델에 입력
-- 인식 결과 파싱 및 분류 로직 구현
-
-**구현 코드**
-```python
-import tensorflow as tf
-import numpy as np
-
-class TrashClassifier:
-    def __init__(self, model_path):
-        """TensorFlow Lite 모델 로딩"""
-        self.interpreter = tf.lite.Interpreter(model_path=model_path)
-        self.interpreter.allocate_tensors()
-        
-        # 입출력 텐서 정보 획득
-        self.input_details = self.interpreter.get_input_details()
-        self.output_details = self.interpreter.get_output_details()
-    
-    def infer(self, preprocessed_image):
-        """모델 추론 수행"""
-        # 입력 텐서 설정
-        input_data = np.expand_dims(preprocessed_image, axis=0).astype(np.float32)
-        input_data = input_data / 255.0  # 정규화
-        
-        self.interpreter.set_tensor(self.input_details[0]['index'], input_data)
-        
-        # 추론 실행
-        self.interpreter.invoke()
-        
-        # 출력 결과 추출
-        output_data = self.interpreter.get_tensor(self.output_details[0]['index'])
-        
-        return output_data[0]
-    
-    def classify(self, predictions):
-        """분류 결과 결정"""
-        trash_class = np.argmax(predictions)
-        confidence = predictions[trash_class]
-        
-        if confidence > 0.7:
-            if trash_class == 0:
-                return "RECYCLABLE", confidence
-            else:
-                return "GENERAL", confidence
-        else:
-            return "UNKNOWN", confidence
-```
-
-**성과**
-- 평균 응답 시간: 1.2초 (Raspberry Pi 4 기준)
-- 분류 정확도: 92%
-- 신뢰도 필터링으로 오인식 12% 감소
-
----
-
 ### ✅ MCU와 통신 및 제어 신호 전송
 
 **담당 내용**
@@ -287,12 +228,7 @@ class MCUController:
 - 각 처리 단계의 지연시간 관리
 - 멀티스레드를 사용한 병렬 처리
 
-### 3. AI 모델 추론 파이프라인 구현 및 최적화
-- 경량 모델(TensorFlow Lite) 활용
-- 양자화(Quantization)를 통한 모델 최적화
-- 임베디드 환경에서의 AI 실행
-
-### 4. 마이크로컨트롤러와의 통신 프로토콜 설계
+### 3. 마이크로컨트롤러와의 통신 프로토콜 설계
 - UART 시리얼 통신 구현
 - 에러 처리 및 재전송 로직
 - 프로토콜 정의 및 문서화

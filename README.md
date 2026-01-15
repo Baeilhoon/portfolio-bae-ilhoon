@@ -45,11 +45,10 @@ MCU 펌웨어 개발 경험을 통해 하드웨어 수준의 동작 원리를 �
 ### 🥉 [3. 디지털트윈 TIAGo 자율배달로봇](./projects/03-tiAGo-digital-twin.md)
 **Isaac-Sim 기반 지능형 물류 자동화 시스템**
 - YOLOv8n 파인튜닝으로 박스 감지 (94% 정확도)
-- Tesseract OCR로 배송 정보 인식 (92% 정확도)
 - QR코드 감지 및 디코딩 (99% 정확도)
 - Isaac-Sim 디지털트윈 시뮬레이션
 
-**기술**: Python, YOLOv8, Tesseract OCR, pyzbar, Isaac-Sim, ROS2
+**기술**: Python, YOLOv8, pyzbar, Isaac-Sim, ROS2
 
 ---
 

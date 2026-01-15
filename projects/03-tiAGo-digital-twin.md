@@ -11,7 +11,8 @@
 
 NVIDIA Isaac-Sim의 디지털트윈 환경에서 TIAGo 협동로봇이 물류 센터에서 박스를 배달하는 자율 시스템입니다. 
 
-YOLOv8n 모델을 파인튜닝하여 박스를 인식하고, **OCR(광학 문자 인식)**과 **QR코드 감지**로 목적지를 파악한 후, 로봇이 자동으로 박스를 픽킹하여 지정된 위치에 배달합니다.
+YOLOv8n 모델을 파인튜닝하여 박스를 인식하고, **QR코드 감지**로 목적지를 파악한 후, 로봇이 자동으로 박스를 픽킹하여 지정된 위치에 배달합니다.
+*(초기 OCR 기반 텍스트 인식을 시도했으나, Isaac-Sim의 시뮬레이션 환경에서 텍스트 렌더링 품질이 낮아 인식률이 저하되어, 보다 안정적인 QR코드 방식으로 변경)*
 
 **핵심**: Isaac-Sim 시뮬레이션 + 컴퓨터 비전 + ROS2 로봇 제어의 완전한 통합
 
@@ -107,99 +108,12 @@ def train_yolov8n():
 
 ---
 
-### ✅ OCR(광학 문자 인식)을 통한 목적지 식별
+### ✅ QR코드 감지 및 디코딩 (목적지 식별)
 
-**담당 내용**
-- 박스 위의 텍스트(배송지, 상품명 등) 인식
-- 한글 + 영문 OCR 지원
-- 인식률 개선 (전처리, 후처리)
-
-**구현 코드**
-```python
-import pytesseract
-import cv2
-from PIL import Image
-import numpy as np
-
-class TextRecognizer:
-    def __init__(self):
-        # Tesseract OCR 설정 (한글, 영문 모두 지원)
-        self.lang = 'kor+eng'  # 한글 + 영문
-    
-    def recognize_text(self, frame, box_roi):
-        """박스 영역에서 텍스트 인식"""
-        x1, y1, x2, y2 = box_roi
-        
-        # ROI 추출
-        roi = frame[y1:y2, x1:x2]
-        
-        # 이미지 전처리 (OCR 정확도 향상)
-        roi_preprocessed = self._preprocess_for_ocr(roi)
-        
-        # Tesseract OCR 실행
-        text = pytesseract.image_to_string(roi_preprocessed, lang=self.lang)
-        
-        return text.strip()
-    
-    def _preprocess_for_ocr(self, roi):
-        """OCR 정확도를 위한 전처리"""
-        # 그레이스케일 변환
-        gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
-        
-        # 이진화 (Thresholding)
-        # Otsu's Method로 자동 임계값 결정
-        _, binary = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
-        
-        # 노이즈 제거 (morphological operations)
-        kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3, 3))
-        denoised = cv2.morphologyEx(binary, cv2.MORPH_CLOSE, kernel)
-        denoised = cv2.morphologyEx(denoised, cv2.MORPH_OPEN, kernel)
-        
-        # 해상도 향상 (Super-resolution 유사 효과)
-        enlarged = cv2.resize(denoised, None, fx=3, fy=3, 
-                             interpolation=cv2.INTER_CUBIC)
-        
-        return enlarged
-    
-    def parse_delivery_info(self, text):
-        """인식된 텍스트에서 배송 정보 추출"""
-        # 정규표현식으로 주소, 수신자명 등 추출
-        import re
-        
-        info = {
-            'destination': None,
-            'recipient': None,
-            'product_name': None
-        }
-        
-        lines = text.split('\n')
-        
-        for line in lines:
-            # 배송지 패턴: "서울시 강남구 ..."
-            if any(region in line for region in ['서울', '부산', '인천', '대구']):
-                info['destination'] = line
-            
-            # 수신자 패턴: "홍길동", "김철수" 등
-            if len(line) < 10 and any(char.isalpha() or ord(char) >= 0xAC00 for char in line):
-                info['recipient'] = line
-        
-        return info
-
-# 성과
-delivery_results = [
-    {'image': 'box1.jpg', 'ocr_confidence': 0.94, 'text': '서울시 강남구 테헤란로 100'},
-    {'image': 'box2.jpg', 'ocr_confidence': 0.87, 'text': '배송자: 홍길동'},
-]
-```
-
-**성과**
-- OCR 인식률: 92% (한글)
-- 처리 시간: < 500ms
-- 배송 정보 추출 정확도: 95%
-
----
-
-### ✅ QR코드 감지 및 디코딩
+**변경 이유**
+- 초기 계획: Tesseract OCR을 사용한 텍스트 인식
+- 문제점: Isaac-Sim의 시뮬레이션 환경에서 카메라로 렌더링된 텍스트 이미지의 품질이 낮아 OCR 정확도가 50% 이하로 저하됨
+- **해결책**: 보다 안정적인 **QR코드 기반 목적지 식별** 방식으로 변경 (정확도 99%)
 
 **담당 내용**
 - 박스의 QR코드 감지 및 위치 파악
@@ -320,7 +234,6 @@ class QRCodeDetector:
 
 ### 컴퓨터 비전 라이브러리
 - **YOLOv8**: 박스 감지
-- **Tesseract OCR**: 텍스트 인식
 - **pyzbar**: QR코드 감지
 - **OpenCV**: 이미지 처리
 
