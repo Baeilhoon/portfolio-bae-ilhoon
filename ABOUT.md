@@ -122,4 +122,3 @@
 **Last Updated**: 2026년 1월 15일  
 **License**: MIT License
 
-마크다운 형식으로 작성되었으며, GitHub에서 최적으로 표시됩니다.
