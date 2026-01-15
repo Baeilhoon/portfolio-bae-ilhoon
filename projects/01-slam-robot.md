@@ -15,63 +15,6 @@ Ubuntu Linux 환경에서 ROS2 기반 자율주행 로봇 시스템을 개발했
 
 ## 🎯 담당 역할 (씨프로 직무 연관)
 
-### ✅ RealSense D435i 카메라 노드 개발 (C++)
-
-**담당 내용**
-- Intel RealSense D435i 카메라를 ROS2 환경에 통합
-- Depth + RGB 데이터를 실시간으로 동시 수신
-- cv_bridge를 활용한 OpenCV 연동
-
-**구현 상세**
-```cpp
-// ROS2 Image Subscriber
-void imageCallback(const sensor_msgs::msg::Image::SharedPtr msg) {
-    cv::Mat frame = cv_bridge::toCvShare(msg, "bgr8")->image;
-    // 이미지 처리 로직
-}
-
-// 카메라 노드 구성
-rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr subscription_;
-```
-
-**성과**
-- 초당 30프레임 안정적 처리 보장
-- Latency < 50ms 달성
-
----
-
-### ✅ 영상 데이터 전처리 파이프라인 구현
-
-**담당 내용**
-- 노이즈 필터링 및 이미지 정규화
-- ROI(Region of Interest) 기반 처리
-- 멀티스레드 Executor로 병렬 처리 최적화
-
-**구현 기법**
-```cpp
-// 이미지 전처리
-cv::Mat processImage(const cv::Mat& raw_image) {
-    cv::Mat gray;
-    cv::cvtColor(raw_image, gray, cv::COLOR_BGR2GRAY);
-    
-    // 노이즈 제거 (Bilateral Filter)
-    cv::Mat filtered;
-    cv::bilateralFilter(gray, filtered, 9, 75, 75);
-    
-    // ROI 추출
-    cv::Rect roi(100, 100, 300, 300);
-    cv::Mat roi_image = filtered(roi);
-    
-    return roi_image;
-}
-```
-
-**성과**
-- CPU 사용률 40% 절감
-- 처리 속도 2배 향상
-
----
-
 ### ✅ 그리퍼 설계 및 시스템 연동 (Arduino → TurtleBot → PC)
 
 **담당 내용**
@@ -253,17 +196,12 @@ subscription_ = this->create_subscription<sensor_msgs::msg::Image>(
 - 프로파일링과 성능 병목 분석
 - 메모리 최적화 및 Zero-copy 기법
 
-### 2. 카메라 인터페이스 및 데이터 파이프라인
-- 카메라 센서 제어 및 설정
-- 실시간 이미지 스트림 처리
-- 하드웨어 버퍼 관리
-
-### 3. ROS2 아키텍처 이해
+### 2. ROS2 아키텍처 이해
 - Pub/Sub 패턴과 DDS 통신
 - Node 간 데이터 동기화
 - QoS 설정을 통한 신뢰성 보장
 
-### 4. 멀티센서 데이터 통합
+### 3. 멀티센서 데이터 통합
 - 깊이맵 + RGB 이미지 동시 처리
 - IMU 데이터와의 동기화
 - 센서 퓨전(Sensor Fusion) 기초
@@ -274,17 +212,12 @@ subscription_ = this->create_subscription<sensor_msgs::msg::Image>(
 
 ### 🔴 어려웠던 부분 & 해결 방법
 
-**문제 1: 높은 CPU 사용률**
-- **원인**: 모든 프레임을 전체 해상도로 처리
-- **해결**: ROI 기반 처리 + 해상도 적응형 조정
-- **결과**: CPU 40% 절감
-
-**문제 2: 프레임 손실 (네트워크)**
+**문제 1: 프레임 손실 (네트워크)**
 - **원인**: ROS2 DDS의 기본 QoS 설정이 신뢰성 중심
 - **해결**: BestEffort + KeepLast 조합으로 지연 최소화
 - **결과**: 프레임 손실률 90% 감소
 
-**문제 3: 카메라 데이터 동기화**
+**문제 2: 카메라 데이터 동기화**
 - **원인**: RGB와 Depth 타이밍 불일치
 - **해결**: Message Filter 사용 (time-based synchronization)
 - **결과**: 완벽한 데이터 정렬
