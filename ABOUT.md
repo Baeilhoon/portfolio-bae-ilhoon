@@ -6,11 +6,13 @@
 
 - **[메인 포트폴리오](./README.md)** - 전체 프로필 및 프로젝트 요약
 - **[프로젝트 상세](./projects/)** - 각 프로젝트의 기술 상세 정보
-  - [SLAM 자율주행 로봇](./projects/01-slam-robot.md) ⭐
-  - [AI 자동분리수거 쓰레기통](./projects/02-trash-ai.md) ⭐
-  - [컨베이어 벨트 자동화](./projects/03-conveyor-ros2.md)
-  - [ESP32 스마트홈](./projects/04-smartHome-esp32.md)
-  - [수질 모니터링](./projects/05-water-monitoring.md)
+  - [SLAM 기반 자율주행 로봇](./projects/01-slam-robot.md) ⭐
+  - [멀티모달 LLM 협동로봇 지능제어](./projects/02-multimodal-llm-robot.md) ⭐
+  - [디지털트윈 TIAGo 자율배달로봇](./projects/03-tiAGo-digital-twin.md)
+  - [AI 자동분리수거 쓰레기통](./projects/04-trash-ai.md)
+  - [컨베이어 벨트 자동화 공정](./projects/05-conveyor-ros2.md)
+  - [ESP32 MQTT 스마트홈 제어](./projects/06-smartHome-esp32.md)
+  - [수질 모니터링 시스템](./projects/07-water-monitoring.md)
 - **[기술 스택](./skills/technical-stack.md)** - 사용 기술 및 도구
 - **[교육 경력](./education/rokey-bootcamp.md)** - ROKEY 부트캠프
 
@@ -40,18 +42,20 @@
 
 | 프로젝트 | 기간 | 기술 | 강조 |
 |---------|------|------|------|
-| **SLAM 자율주행 로봇** | 2025.11 | ROS2, C++, OpenCV | 영상처리 + 실시간 처리 |
-| **AI 쓰레기통** | 2024.09-11 | Python, TFLite, OpenCV | 임베디드 AI + 하드웨어 제어 |
-| **컨베이어 벨트 제어** | 2025.10 | ROS2, C++, MoveIt2 | 실시간 제어 + 센서융합 |
-| **ESP32 스마트홈** | 2024.06-08 | C, Arduino, MQTT | IoT 네트워크 통신 |
-| **수질 모니터링** | 2024.03-05 | Arduino, C | MCU 펌웨어 + 데이터 로깅 |
+| **SLAM 기반 자율주행 로봇** | 2025.11 | ROS2, C++, OpenCV | 영상처리 + 실시간 처리 |
+| **멀티모달 LLM 협동로봇 지능제어** | 2025.12 | Python, OpenCV, ROS2 | 영상 인식 + 로봇 제어 |
+| **디지털트윈 TIAGo 자율배달로봇** | 2025.10-11 | Python, YOLOv8, Isaac-Sim | AI 영상 인식 + 시뮬레이션 |
+| **AI 자동분리수거 쓰레기통** | 2024.09-11 | Python, TFLite, OpenCV | 임베디드 AI + 하드웨어 제어 |
+| **컨베이어 벨트 자동화 공정** | 2025.10 | ROS2, C++, MoveIt2 | 실시간 제어 + 센서융합 |
+| **ESP32 MQTT 스마트홈 제어** | 2024.06-08 | C, Arduino, MQTT | IoT 네트워크 통신 |
+| **수질 모니터링 시스템** | 2024.03-05 | Arduino, C | MCU 펌웨어 + 데이터 로깅 |
 
 ## 🎓 주요 경력
 
 - **ROKEY 부트캠프 5기** (2025.07 - 2026.01)
   - 두산 로보틱스 ROS2 집중 교육
   - 6개월, 960시간
-  - 팀 프로젝트 2개 완료
+  - 팀 프로젝트 4개 완료 (멀티노드 시스템, 협동로봇 제어, SLAM 기반 자율주행)
 
 ## 💻 기술 스택
 
@@ -91,26 +95,27 @@
 
 ## 🚀 향후 계획
 
-### 3개월
-- YOLO 커스텀 모델 학습
-- ROS2 고급 주제 (Action, Service)
-- Gazebo 로봇 시뮬레이션
+신입 **임베디드 소프트웨어 개발자**로서 다음과 같은 역량을 갖춘 엔지니어가 되겠습니다:
 
-### 6개월
-- 멀티로봇 분산 시스템
-- GPU 프로그래밍 (CUDA)
-- 클라우드 연동 (AWS)
+### 단기 (3개월)
+- **실무 적응**: Embedded Linux 기반 제품 개발 경험 축적
+- **기술 심화**: C++ 성능 최적화, 실시간 시스템 디버깅
+- **협업 역량**: 팀 프로젝트에서의 커뮤니케이션 및 코드 리뷰
 
-### 1년
-- 자율 주행 알고리즘
-- 강화학습 (Reinforcement Learning)
-- 실시간 OS (RTOS)
+### 중기 (6개월)
+- **제품화 경험**: 프로토타입을 실제 제품으로 개발
+- **성능 최적화**: 메모리, CPU 사용률 프로파일링 및 개선
+- **테스트 자동화**: Unit 테스트, 통합 테스트 작성
+
+### 장기 (1년)
+- **아키텍처 이해**: 대규모 시스템의 설계 및 구현
+- **기술 리더십**: 팀 내에서 기술 의사결정 참여
+- **지속적 성장**: 새로운 기술 학습 및 적용
 
 ## 📞 연락처
 
-- **Email**: [your-email@example.com]
-- **GitHub**: [github.com/your-username]
-- **LinkedIn**: [linkedin.com/in/your-profile]
+- **Email**: [bae1hon@gmail.com](mailto:bae1hon@gmail.com)
+- **GitHub**: [github.com/Baeilhoon](https://github.com/Baeilhoon)
 
 ---
 

@@ -275,9 +275,9 @@ home/
 
 ## 🔗 관련 자료
 
-- **GitHub**: [https://github.com/Baeilhoon/iot-teamproject/blob/main/iot_otp_teamproject.mp4]
-- **Arduino**: [https://www.arduino.cc/]
-- **MQTT.org**: [https://mqtt.org/]
+- **GitHub**: [github.com/Baeilhoon/iot-teamproject](https://github.com/Baeilhoon/iot-teamproject)
+- **Arduino**: [arduino.cc](https://www.arduino.cc/)
+- **MQTT.org**: [mqtt.org](https://mqtt.org/)
 - **Mosquitto**: [https://mosquitto.org/]
 
 ---
