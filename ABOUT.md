@@ -82,11 +82,11 @@
 
 | 분야 | 수준 | 설명 |
 |------|------|------|
-| **Embedded Linux** | ●●●●○ | Ubuntu 22.04, ROS2 Humble, Linux Command Line |
-| **프로그래밍 언어** | ●●●●○ | C, C++ (ROS2 노드 개발), Python |
-| **영상/이미지 처리** | ●●●○○ | OpenCV (cv_bridge), 이미지 전처리, YOLO 연동 |
-| **통신** | ●●●●○ | ROS2 DDS, MQTT, UART, TCP/UDP 기초 |
-| **임베디드/MCU** | ●●●●○ | Arduino(ATmega), ESP32, 센서 인터페이싱 |
+| **Embedded Linux** | ●●●● | Ubuntu 22.04, ROS2 Humble, Linux Command Line |
+| **프로그래밍 언어** | ●●●● | C, C++ (ROS2 노드 개발), Python |
+| **영상/이미지 처리** | ●●● | OpenCV (cv_bridge), 이미지 전처리, YOLO 연동 |
+| **통신** | ●●●● | ROS2 DDS, MQTT, UART, TCP/UDP 기초 |
+| **임베디드/MCU** | ●●●● | Arduino(ATmega), ESP32, 센서 인터페이싱 |
 
 ## 🚀 향후 계획
 
