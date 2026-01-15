@@ -102,12 +102,6 @@ Debug:        GDB, RViz, rqt_graph, rqt_plot
 
 ---
 
-## 🔗 관련 자료
-
-- **ROKEY 공식 사이트**: https://rokey.doosanrobotics.com/
-
----
-
 ## ✅ 최종 평가
 
 ### 부트캠프의 의미
