@@ -157,12 +157,4 @@ ROS2 기반 로봇 제어 시스템 개발 집중 교육
 
 ---
 
-## 📧 Contact
-
-- **Email**: [your-email@example.com]
-- **GitHub**: [github.com/your-username]
-- **LinkedIn**: [linkedin.com/in/your-profile]
-
----
-
 **Last Updated**: 2026년 1월 15일
