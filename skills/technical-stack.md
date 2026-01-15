@@ -20,7 +20,7 @@ Arch:       ARM (Cortex-M, Cortex-A)
 
 ## 📝 프로그래밍 언어
 
-### C++ (저수준 프로그래밍 & 실시간 시스템)
+### C++ 
 **주요 활용**
 - Embedded Linux 시스템 프로그래밍
 - 실시간 데이터 처리 및 신호 처리
@@ -40,7 +40,7 @@ Arch:       ARM (Cortex-M, Cortex-A)
 
 ---
 
-### Python (시스템 테스트 & 데이터 처리)
+### Python 
 **주요 활용**
 - 임베디드 시스템 테스트 및 자동화
 - 데이터 분석 및 로깅
@@ -57,7 +57,7 @@ Arch:       ARM (Cortex-M, Cortex-A)
 
 ---
 
-### Arduino C (MCU 펌웨어)
+### Arduino C
 **주요 활용**
 - MCU 기반 펌웨어 개발
 - 센서 데이터 수집
@@ -147,7 +147,7 @@ Linux C 구현:
   - 스마트홈: 조도 센서
 ```
 
-### SPI (Serial Peripheral Interface)
+### SPI
 ```
 프로토콜:  동기식 4선 통신 (MOSI, MISO, SCK, CS)
 속도:      1MHz ~ 10MHz 이상
@@ -164,7 +164,7 @@ Linux C 구현:
   spi_transfer(fd, tx_buffer, rx_buffer, length);
 ```
 
-### ADC (Analog-to-Digital Converter)
+### ADC
 ```
 목적:  아날로그 신호를 디지털 값으로 변환
 분해능: 8-bit ~ 16-bit
@@ -184,7 +184,7 @@ Arduino 구현:
 
 ## 📡 Communication Protocols & Networking
 
-### MQTT (IoT Pub/Sub 메시징)
+### MQTT
 ```
 프로토콜:    경량 Pub/Sub 메시징
 포트:        1883 (표준), 8883 (TLS)
@@ -205,14 +205,14 @@ ESP32 구현 (Arduino):
 프로젝트: ESP32 MQTT 스마트홈 제어
 ```
 
-### DDS (분산 실시간 미들웨어)
+### DDS
 ```
 용도:  멀티프로세스 실시간 통신
 QoS:   신뢰성(Reliability), 지연시간(Deadline) 등
 응용:  ROS2 노드 간 통신 (응용 사례)
 ```
 
-### TCP/UDP (일반 네트워크 통신)
+### TCP/UDP 
 ```
 TCP:  신뢰성 중심 (연결 기반, 손실 없음)
 UDP:  속도 중심 (비연결, 손실 가능)
@@ -283,44 +283,6 @@ pthread: POSIX 스레드 라이브러리
   pthread_mutex_lock(&mutex);
   // critical section
   pthread_mutex_unlock(&mutex);
-```
-
----
-
-## 📊 Real-Time & Performance Optimization
-
-### 성능 분석 및 프로파일링
-```
-병목 분석:
-  - CPU 사용률 (top, htop)
-  - 메모리 누수 (valgrind)
-  - 실행 시간 측정 (gettimeofday, clock_gettime)
-  - 함수별 시간 측정 (gprof)
-
-레이턴시 최적화:
-  - 메시지 큐 크기 튜닝
-  - 멀티스레드 동기화 개선
-  - 실시간 우선순위 설정 (nice, chrt)
-
-목표: < 50ms 레이턴시
-```
-
-### 메모리 최적화
-```
-임베디드 특성:
-  - 제한된 RAM (MCU: KB 단위, SBC: MB ~ GB)
-  - 효율적 자료구조 사용
-  - 동적 할당 최소화
-
-기법:
-  - 스택 사용 (함수 로컬 배열)
-  - 순환 버퍼 (FIFO)
-  - 메모리 풀 (미리 할당)
-  - 메모리 매핑 (대용량 파일)
-
-프로젝트: 
-  - 수질 모니터링: 센서 데이터 순환 버퍼
-  - SLAM: 멀티스레드 메모리 관리
 ```
 
 ---
@@ -403,7 +365,7 @@ CMakeLists.txt:
 버전 관리:    git
 ```
 
-### GDB 디버깅 (임베디드 전용)
+### GDB 디버깅
 ```
 실행:   gdb ./executable
 명령:   
@@ -422,7 +384,7 @@ CMakeLists.txt:
   (gdb) target remote host:port
 ```
 
-### 직렬 모니터 (Serial Monitor)
+### Serial Monitor
 ```
 Arduino IDE 내장
 또는 minicom, picocom 사용
@@ -456,21 +418,6 @@ minicom 사용:
 목적:  MCU 펌웨어 개발
 보드:  Arduino Mega, ESP32
 라이브러리: DHT, OneWire, SD 등
-```
-
-### Git & GitHub
-```
-기본 명령:
-  git clone <url>         - 저장소 복제
-  git add <file>          - 스테이징
-  git commit -m "message" - 커밋
-  git push                - 원격 저장소로 업로드
-  git pull                - 원격 저장소에서 다운로드
-
-브랜치 관리:
-  git branch <name>       - 브랜치 생성
-  git checkout <branch>   - 브랜치 전환
-  git merge <branch>      - 브랜치 병합
 ```
 
 ---
@@ -526,7 +473,7 @@ minicom 사용:
 
 ## 📊 역량 레벨 평가
 
-### 매우 능숙 ⭐⭐⭐⭐⭐
+### 능숙 ⭐⭐⭐⭐⭐
 - **C/C++** (저수준 프로그래밍, 멀티스레드, 실시간)
 - **MCU 펌웨어** (Arduino, ESP32)
 - **임베디드 Linux** (시스템 프로그래밍)
