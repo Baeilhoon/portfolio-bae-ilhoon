@@ -23,24 +23,37 @@ MCU 펌웨어 개발 경험을 통해 하드웨어 수준의 동작 원리를 �
 ### 🥇 [1. SLAM 기반 자율주행 로봇](./projects/01-slam-robot.md)
 **ROS2 기반 실시간 영상 처리 & 자율주행 시스템**
 - 카메라 데이터 파이프라인 개발 (C++)
+- 그리퍼 제어 (Arduino → TurtleBot → PC 연동)
 - 실시간 영상 처리 및 성능 최적화
 - Ubuntu Linux + ROS2 Humble 환경
 
-**기술**: C++, ROS2, OpenCV, RealSense, cv_bridge
+**기술**: C++, ROS2, OpenCV, RealSense, cv_bridge, Arduino, 그리퍼 제어
 
 ---
 
-### 🥈 [2. AI 자동분리수거 쓰레기통](./projects/02-trash-ai.md)
-**이미지 인식 기반 실시간 분류 시스템**
-- Raspberry Pi + 카메라 영상 처리 (Python)
-- YOLO 모델 추론 파이프라인
-- MCU 연동 및 하드웨어 제어
+### 🥈 [2. 멀티모달 LLM 협동로봇 지능제어](./projects/02-multimodal-llm-robot.md)
+**Webcam 기반 멀티모달 영상 인식 & 로봇 제어**
+- YOLOWorld 기반 Open-vocabulary 물체 인식
+- Mediapipe Hand Detector를 활용한 손 제스처 인식
+- 영상 인식 + 로봇 제어 통합
+- 실시간 멀티모달 상호작용
 
-**기술**: Python, OpenCV, TensorFlow Lite, UART, Raspberry Pi
+**기술**: Python, OpenCV, YOLOWorld, Mediapipe, ROS2
 
 ---
 
-### 🥉 [3. 컨베이어 벨트 자동화 공정](./projects/03-conveyor-ros2.md)
+### 🥉 [3. 디지털트윈 TIAGo 자율배달로봇](./projects/03-tiAGo-digital-twin.md)
+**Isaac-Sim 기반 지능형 물류 자동화 시스템**
+- YOLOv8n 파인튜닝으로 박스 감지 (94% 정확도)
+- Tesseract OCR로 배송 정보 인식 (92% 정확도)
+- QR코드 감지 및 디코딩 (99% 정확도)
+- Isaac-Sim 디지털트윈 시뮬레이션
+
+**기술**: Python, YOLOv8, Tesseract OCR, pyzbar, Isaac-Sim, ROS2
+
+---
+
+### 4️⃣ [4. 컨베이어 벨트 자동화 공정](./projects/05-conveyor-ros2.md)
 **ROS2 기반 로봇 자동화 제어 시스템**
 - 실시간 제어 파이프라인 (State Machine)
 - 협동로봇(Doosan) 제어
@@ -52,8 +65,9 @@ MCU 펌웨어 개발 경험을 통해 하드웨어 수준의 동작 원리를 �
 
 ## 🔧 Other Projects
 
-- [4. ESP32 MQTT 스마트홈 제어](./projects/04-smartHome-esp32.md) - IoT 프로토콜, 네트워크 통신
-- [5. 수질 모니터링 시스템](./projects/05-water-monitoring.md) - MCU 센서 데이터 처리
+- [5. AI 자동분리수거 쓰레기통](./projects/04-trash-ai.md) - 임베디드 AI, 하드웨어 제어
+- [6. ESP32 MQTT 스마트홈 제어](./projects/06-smartHome-esp32.md) - IoT 프로토콜, 네트워크 통신
+- [7. 수질 모니터링 시스템](./projects/07-water-monitoring.md) - MCU 센서 데이터 처리
 
 ---
 

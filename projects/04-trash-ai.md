@@ -338,4 +338,4 @@ class MCUController:
 ---
 
 **[← 포트폴리오로 돌아가기](../README.md)**  
-**[← 이전 프로젝트](./01-slam-robot.md) | [다음 프로젝트 →](./03-conveyor-ros2.md)**
+**[← 이전 프로젝트](./03-tiAGo-digital-twin.md) | [다음 프로젝트 →](./05-conveyor-ros2.md)**

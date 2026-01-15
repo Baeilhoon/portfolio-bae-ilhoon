@@ -298,4 +298,4 @@ home/
 ---
 
 **[← 포트폴리오로 돌아가기](../README.md)**  
-**[← 이전 프로젝트](./03-conveyor-ros2.md) | [다음 프로젝트 →](./05-water-monitoring.md)**
+**[← 이전 프로젝트](./05-conveyor-ros2.md) | [다음 프로젝트 →](./07-water-monitoring.md)**

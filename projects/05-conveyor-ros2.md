@@ -386,4 +386,4 @@ public:
 ---
 
 **[← 포트폴리오로 돌아가기](../README.md)**  
-**[← 이전 프로젝트](./02-trash-ai.md) | [다음 프로젝트 →](./04-smartHome-esp32.md)**
+**[← 이전 프로젝트](./04-trash-ai.md) | [다음 프로젝트 →](./06-smartHome-esp32.md)**
