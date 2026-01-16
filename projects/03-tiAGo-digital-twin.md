@@ -185,7 +185,7 @@ YOLOv8n 모델을 파인튜닝하여 박스를 인식하고, **QR코드 감지**
 
 ## 🔗 관련 자료
 
-- **GitHub**: [https://github.com/C-2-Organization/tiago-delivery/tree/main/ros2_ws/src]
+- **GitHub**: [https://github.com/C-2-Organization/tiago-delivery]
 - **Isaac-Sim**: [https://docs.omniverse.nvidia.com/isaacsim/]
 - **YOLOv8**: [https://github.com/ultralytics/ultralytics]
 - **Tesseract OCR**: [https://github.com/UB-Mannheim/tesseract]
